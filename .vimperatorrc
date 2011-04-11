@@ -1,10 +1,9 @@
 "3.1pre (created: 2011/04/03 22:58:23)
 
-command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
-command! -nargs=+ lazyfmapsgooglereader lazy fmaps -urls='www\.google\.com/reader' -events=vkeypress <args>
+highlight Hint::after content: attr(hintchar)
 map ,y title
-map , <C-Tab>
-map m <C-S-Tab>
+map w <C-Tab>
+map q <C-S-Tab>
 map a k
 map s j
 map xz :ba<Space><Tab>
@@ -22,6 +21,7 @@ map tg :tabopen<Space>google<Space>
 map tw :tabopen<Space>wiki<Space>
 map tf :tabopen<Space>ff<Space>
 map tj :tabopen<Space>js<Space>
+map RB :restart<Return>
 map <C-c> ;y
 map <C-d> :stop<Return>
 map <C-Up> :set<Space>gui=all<Return>
@@ -42,11 +42,7 @@ noremap pw Y:tabopen<Space>wiki<Space><C-v><C-v><Return>
 noremap ,es :set<Space>encoding=Shift_JIS<Return>
 noremap ,ec :set<Space>encoding=EUC-JP<Return>
 noremap ,eu :set<Space>encoding=UTF-8<Return>
-noremap ,eg :set<Space>encodeing=GB2312<Return>
-noremap "\\gg" :gmail<Space>(label:appinn<Space>OR<Space>label:againstgfw)<Space>AND<Space>is:unread<Return>
-noremap "\\gr" :gmail<Space>label:reminder<Space>is:unread<Return>
-noremap "\\gt" :gmail<Space>label:twitter<Space>is:unread<Return>
-noremap "\\gc" :gmail<Space>is:chat<Space>AND<Space>-xmpptunnel<Space>-@appspot.com<Space>-bot@<Return>
+noremap ,eg :set<Space>encoding=GB2312<Return>
 noremap bm :buffer<Space>gmail<Return>
 noremap br :buffer<Space>google<Space>reader<Return>
 noremap bt :buffer<Space>twitter<Return>
@@ -61,7 +57,6 @@ noremap ca :copy<Space>anchor<Return>
 noremap cs :copy<Space>selanchor<Return>
 noremap cb :copy<Space>htmlblockquote<Return>
 set focuscontent
-set hintchars=hjklasdfgyuiopqwertnmzxcvb
 set maxitems=10
 set "nextpattern=s*下一页|下一张|下一篇|下页|后页s*,^bnextb,\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b"
 set "previouspattern=s*上一页|上一张|上一篇|上页|前页s*,^bprev|previousb,\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$"
