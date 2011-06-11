@@ -1,4 +1,4 @@
-"3.1pre (created: 2011/04/03 22:58:23)
+"3.1 (created: 2011/04/21 23:26:46)
 
 highlight Hint::after content: attr(hintchar)
 map ,y title
@@ -25,7 +25,7 @@ map RB :restart<Return>
 map <C-c> ;y
 map <C-d> :stop<Return>
 map <C-Up> :set<Space>gui=all<Return>
-map <C-Down> :set<Space>gui=nobookmarks,nomenu,nonavigation<Return>
+map <C-Down> :set<Space>gui=nomenu,nonavigation<Return>
 map S :sidebar<Space><S-Tab>
 map V :emenu<Space>
 map U :u<Space><Tab><S-Tab>
