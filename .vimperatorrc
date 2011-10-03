@@ -22,6 +22,8 @@ let g:nextlink_nextmap= "]n"
 "" HintcharMod
 ""
 ""let g:asdfghjkl_hintchars = "vcxzdsaewq"
+""let g:hintchars="ABCDEFHIJKLMNOPQRSTUVWXYZ"  
+""let g:hintsio="iO"
 ""
 "" Hint_yank_Copy
 ""
@@ -94,10 +96,6 @@ EOF
 ""
 loadplugins
 ""
-"" 加载 HatenaBookmark 的脚本
-""
-""javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.""js', {__proto__: this});
-""
 "" -------------------------------------------------------
 ""
 "" ==================================================
@@ -136,9 +134,10 @@ noremap W :tabmove! -1<CR>
 map a k
 map s j
 " xz xc 回格键对该标签历史回溯
-map xz :ba<space><tab>
-map xc :fo<space><tab>
-noremap <backspace> H
+"map xz :ba<space><tab>
+"map xc :fo<space><tab>
+noremap  h <C-o>
+noremap  i <C-i>
 " 翻页单手版
 noremap eq [[
 noremap ew ]]
@@ -162,6 +161,7 @@ map tg :tabopen<space>google<space>
 map tw :tabopen<space>wiki<space>
 map tf :tabopen<space>ff<space>
 map tj :tabopen<space>js<space>
+map tb :tabopen<space>baidu<space>
 " 把剪贴板的URL贴至新标签上
 noremap pp P
 " 把选中的URL直接跳转至新标签
@@ -203,8 +203,6 @@ command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
 ""
 "" 各种自动启动命令
 ""
-" 在地址栏补全中加入Hatena Bookmark支持
-""lazy set complete+=H
 " 调整output的高度为浏览器的一半
 lazy js document.getElementById("liberator-multiline-output").parentNode.maxHeight=content.innerHeight/2 + "px"
 ""
@@ -273,5 +271,6 @@ noremap cs :copy selanchor<CR>
 noremap cb :copy htmlblockquote<CR>
 ""
 "" --------------------------------------------------
-""
-noremap gg :shorten<CR>
+"" 短网址
+noremap ll :shorten<CR>
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
